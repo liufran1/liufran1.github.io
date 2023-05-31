@@ -12,6 +12,9 @@ body{
 /*  margin-bottom: 100px;*/
   padding-bottom: 2.5rem;
   clear: both;
+  height: auto;
+  position: relative;
+  min-height: 100%;
 }
 
 main {

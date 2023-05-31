@@ -1,7 +1,7 @@
 function loadWebsite() {
     var urlInput = document.getElementById("urlInput");
     var url = urlInput.value;
-    var reviewText = `Getting reviews for ${url}`
+    // var reviewText = `Getting reviews for ${url}`
 
     var previewContainer = document.getElementById("previewContainer");
     previewContainer.innerHTML = `<iframe src="${url}"></iframe>`;

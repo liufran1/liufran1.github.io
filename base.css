@@ -34,3 +34,82 @@ div.tooltip {
   border-radius: 8px;			
   pointer-events: none;			
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fc;
+  color: #333;
+}
+
+.container {
+  display: flex;
+}
+
+main {
+  flex-grow: 1;
+  padding: 40px;
+}
+
+.sidebar {
+  background-color: #ccc;
+  color: #000;
+  width: 200px;
+  height: 100vh;
+  padding: 20px;
+  transition: transform 0.3s ease-out;
+  transform: translateX(200px);
+}
+
+.sidebar:hover {
+  transform: translateX(0);
+}
+
+.logo h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+nav ul li {
+  margin-bottom: 10px;
+}
+
+nav ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+header {
+  padding: 40px;
+}
+
+footer {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #888;
+}
+
+.social-icons a:hover {
+  color: #333;
+}

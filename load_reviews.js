@@ -41,6 +41,4 @@ function loadWebsite() {
     }, delayInMilliseconds);
 
 
-      var reviewSummary = document.getElementById("reviewSummary");
-      reviewSummary.innerHTML = `<p>${reviewText}</p>`;
     }

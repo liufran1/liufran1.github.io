@@ -26,10 +26,11 @@ function loadWebsite() {
       }, 10000);
 
       // Make an API call to retrieve the data asynchronously
-      // fetch("https://restaurantreviewsummaries--franklinliu5.repl.co/reviews?input_url" + encodeURIComponent(url))  // replace with custom url
+      
       var delayInMilliseconds = 10000; // mock a delay
       setTimeout(function() {
-      fetch("https://run.mocky.io/v3/5ffdb194-a376-4451-9ed3-4ab18b3ca074")
+      // fetch("https://run.mocky.io/v3/5ffdb194-a376-4451-9ed3-4ab18b3ca074")
+      fetch("http://http://18.219.32.117:8080/reviews?input_url=" + encodeURIComponent(url))  // replace with custom url
         .then(response => response.text())
         .then(data => {
           outputContainer.innerHTML = `<p align="left">${data}</p>`;

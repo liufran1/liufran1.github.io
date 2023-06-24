@@ -30,7 +30,7 @@ function loadWebsite() {
       var delayInMilliseconds = 10000; // mock a delay
       setTimeout(function() {
       // fetch("https://run.mocky.io/v3/5ffdb194-a376-4451-9ed3-4ab18b3ca074")
-      fetch("http://3.141.28.170:8080/reviews?input_url=" + encodeURIComponent(url))  // replace with custom url
+      fetch("https://cb09ahz069.execute-api.us-east-2.amazonaws.com/get_reviews?input_url=" + encodeURIComponent(url))  // replace with custom url
         .then(response => response.text())
         .then(data => {
           outputContainer.innerHTML = `<p align="left">${data}</p>`;

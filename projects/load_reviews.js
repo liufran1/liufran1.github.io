@@ -1,7 +1,6 @@
 function loadWebsite() {
     var urlInput = document.getElementById("urlInput");
     var url = urlInput.value;
-    // var reviewText = `Getting reviews for ${url}`
 
     var previewContainer = document.getElementById("previewContainer");
     previewContainer.innerHTML = `<iframe src="${url}"></iframe>`;
@@ -24,13 +23,8 @@ function loadWebsite() {
         progressBar.style.transition = "";
         spinningWheel.style.display = "inline-block";
       }, 10000);
-
       // Make an API call to retrieve the data asynchronously
-      
-      var delayInMilliseconds = 10000; // mock a delay
-      setTimeout(function() {
-      // fetch("https://run.mocky.io/v3/5ffdb194-a376-4451-9ed3-4ab18b3ca074")
-      fetch("https://cb09ahz069.execute-api.us-east-2.amazonaws.com/get_reviews?input_url=" + encodeURIComponent(url))  // replace with custom url
+    fetch("https://cb09ahz069.execute-api.us-east-2.amazonaws.com/get_reviews?input_url=" + encodeURIComponent(url))  
         .then(response => response.text())
         .then(data => {
           outputContainer.innerHTML = `<p align="left">${data}</p>`;
@@ -39,7 +33,7 @@ function loadWebsite() {
           outputContainer.innerHTML = "Error occurred while fetching data.";
           console.error(error);
         });
-    }, delayInMilliseconds);
+
 
 
     }

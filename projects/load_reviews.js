@@ -8,21 +8,18 @@ function loadWebsite() {
 
     var outputContainer = document.getElementById("reviewSummary");
     outputContainer.innerHTML = `
-        <div class="progress-bar">
-          <div class="progress"></div>
-        </div>
         <div class="spinning-wheel"></div>
       `;
 
-    var progressBar = document.querySelector(".progress-bar .progress");
+    // var progressBar = document.querySelector(".progress-bar .progress");
     var spinningWheel = document.querySelector(".spinning-wheel");
 
       // Set a timeout to show the spinning wheel after 10 seconds
-    var timeoutId = setTimeout(() => {
-        progressBar.style.width = "100%";
-        progressBar.style.transition = "";
-        spinningWheel.style.display = "inline-block";
-      }, 10000);
+    // var timeoutId = setTimeout(() => {
+    //     progressBar.style.width = "100%";
+    //     progressBar.style.transition = "";
+    //     spinningWheel.style.display = "inline-block";
+    //   }, 10000);
       // Make an API call to retrieve the data asynchronously
     fetch("https://cb09ahz069.execute-api.us-east-2.amazonaws.com/get_reviews?input_url=" + encodeURIComponent(url))  
         .then(response => response.text())

@@ -170,7 +170,7 @@ button:hover {
       text-align: center;
     }
 
-.spinning-wheel:before {
+/* .spinning-wheel:before {
       content: "";
       display: inline-block;
       border: 2px solid #F7B93E;
@@ -179,7 +179,7 @@ button:hover {
       width: 20px;
       height: 20px;
       animation: spin 1s linear infinite;
-    }
+    } */
 
 @keyframes spin {
       to {

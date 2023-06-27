@@ -30,7 +30,7 @@ function loadWebsite() {
           outputContainer.innerHTML = `<p align="left">${data}</p>`;
         })
         .catch(error => {
-          outputContainer.innerHTML = "Error occurred while fetching data.";
+          outputContainer.innerHTML = "We ran into an error while getting reviews, try again in a bit.";
           console.error(error);
         });
 

@@ -2,18 +2,20 @@ function loadWebsite() {
     var urlInput = document.getElementById("urlInput");
     var url = urlInput.value;
 
-    var previewContainer = document.getElementById("previewContainer");
-    previewContainer.innerHTML = `<iframe src="${url}"></iframe>`;
-
-
     var outputContainer = document.getElementById("reviewSummary");
     outputContainer.innerHTML = `
         <div class="spinning-wheel"></div>
       `;
 
+    var previewContainer = document.getElementById("previewContainer");
+    previewContainer.innerHTML = `<iframe src="${url}"></iframe>`;
+
+
+
+
     // var progressBar = document.querySelector(".progress-bar .progress");
-    var spinningWheel = document.querySelector(".spinning-wheel");
-    spinningWheel.style.display = "inline-block";
+    // var spinningWheel = document.querySelector(".spinning-wheel");
+    // spinningWheel.style.display = "inline-block";
 
       // Set a timeout to show the spinning wheel after 10 seconds
     // var timeoutId = setTimeout(() => {

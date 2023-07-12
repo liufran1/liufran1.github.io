@@ -1,6 +1,9 @@
+var hashedAnswer = -489961661 // Hardcoded
+var protour = 'wta' // Hardcoded
+
 
 let num_guesses = 0
-var hashedAnswer = -489961661 // Hardcoded
+
 // let guessed = false
 // console.log(num_guesses)
 
@@ -184,7 +187,7 @@ function clipboardShare() {
   
 }
 
-populateDropdown('wta')
+populateDropdown(protour)
 
 var intContainer = document.getElementById("bagelhint");
 var progressContainer = document.getElementById("progress");

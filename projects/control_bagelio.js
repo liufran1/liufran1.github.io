@@ -160,12 +160,36 @@ function populateDropdown(atp_wta) {
     }
 }
 
+function clipboardShare() {
+  // Get the text field
+  // var copyText = document.getElementById("myInput");
+    if (num_guesses == 4) {
+        var textData = `My bagelio score:  \n${'🟨'.repeat(4)} \n https://liufran1.github.io/projects/bagelio`
+
+    }
+    else {
+        var textData = `My bagelio score:  \n${'🟨'.repeat(num_guesses-1)}🎾${'⬛️'.repeat(4-(num_guesses-1)-1)} \n https://liufran1.github.io/projects/bagelio`
+    }
+
+  
+
+  // Select the text field
+  // copyText.select();
+  // copyText.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(textData).then(function() {alert("Result copied to clipboard ");});
+
+  // Alert the copied text
+  
+}
+
 populateDropdown('wta')
 
 var intContainer = document.getElementById("bagelhint");
 var progressContainer = document.getElementById("progress");
 var inputSelector = document.getElementById("inputSelector");
-
+var shareButton = "<button onclick=\"clipboardShare()\">Share</button>"
 
 
 function get_guess() {
@@ -175,7 +199,7 @@ function get_guess() {
 
     if (hashAnswer(selectedPlayer)!=hashedAnswer) {
         if (num_guesses==4) {
-            intContainer.innerHTML =`<p>Sorry, better luck next time</p><p>Share your results: ${'🟨'.repeat(num_guesses)}</p>`
+            intContainer.innerHTML =`<p>Sorry, better luck next time</p><p>Share your results: ${'🟨'.repeat(num_guesses)}</p>`+shareButton
             progressContainer.innerHTML = ''
             inputSelector.remove()
         }
@@ -190,7 +214,7 @@ function get_guess() {
     }
     else {
             console.log(num_guesses)
-            intContainer.innerHTML =`<p>You solved it in ${num_guesses} guess${num_guesses > 1?'es':''}</p><p>Share your results: ${'🟨'.repeat(num_guesses-1)}🎾${'⬛️'.repeat(4-(num_guesses-1)-1)}</p>`
+            intContainer.innerHTML =`<p>You solved it in ${num_guesses} guess${num_guesses > 1?'es':''}</p><p>Share your results: ${'🟨'.repeat(num_guesses-1)}🎾${'⬛️'.repeat(4-(num_guesses-1)-1)}</p>`+shareButton
             progressContainer.innerHTML = ''
             inputSelector.remove()
                 // update page for success

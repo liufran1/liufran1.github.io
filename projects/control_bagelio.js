@@ -173,10 +173,18 @@ function get_guess() {
     num_guesses +=1;
 
     if (hashAnswer(selectedPlayer)!=hashedAnswer) {
-        console.log(num_guesses)
-        intContainer.innerHTML = `<img src="../images/bageld/mystery_${num_guesses}.gif" width="100%">`
-        progressContainer.innerHTML = `<p>${'🟨'.repeat(num_guesses)+'⬛️'.repeat(4-(num_guesses))}</p>`
-                // update progress bar
+        if (num_guesses==4) {
+            intContainer.innerHTML =`<p>Sorry, better luck next time</p><p>Share your results: ${'🟨'.repeat(num_guesses)}</p>`
+            progressContainer.innerHTML = ''
+        }
+        else {
+                    // console.log(num_guesses)
+            intContainer.innerHTML = `<img src="../images/bageld/mystery_${num_guesses}.gif" width="100%">`
+            progressContainer.innerHTML = `<p>${'🟨'.repeat(num_guesses)+'⬛️'.repeat(4-(num_guesses))}</p>`
+
+        }
+
+                
     }
     else {
             console.log(num_guesses)

@@ -164,6 +164,7 @@ populateDropdown('wta')
 
 var intContainer = document.getElementById("bagelhint");
 var progressContainer = document.getElementById("progress");
+var inputSelector = document.getElementById("inputSelector");
 
 
 
@@ -176,6 +177,7 @@ function get_guess() {
         if (num_guesses==4) {
             intContainer.innerHTML =`<p>Sorry, better luck next time</p><p>Share your results: ${'🟨'.repeat(num_guesses)}</p>`
             progressContainer.innerHTML = ''
+            inputSelector.remove()
         }
         else {
                     // console.log(num_guesses)
@@ -190,6 +192,7 @@ function get_guess() {
             console.log(num_guesses)
             intContainer.innerHTML =`<p>You solved it in ${num_guesses} guess${num_guesses > 1?'es':''}</p><p>Share your results: ${'🟨'.repeat(num_guesses-1)}🎾${'⬛️'.repeat(4-(num_guesses-1)-1)}</p>`
             progressContainer.innerHTML = ''
+            inputSelector.remove()
                 // update page for success
         }
 // 

@@ -159,7 +159,7 @@ function get_guess() {
     {
       'Access-Control-Allow-Origin': '*'
     }
-      .then(response => response.text())
+      .then(response => response.json())
       .then(data => {
         // outputContainer.innerHTML = `<p align="left">${data}</p>`;
         console.log(data)

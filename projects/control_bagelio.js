@@ -1,6 +1,6 @@
 
 let num_guesses = 0
-var hashedAnswer = -1754947313 // Hardcoded
+var hashedAnswer = -489961661 // Hardcoded
 // let guessed = false
 // console.log(num_guesses)
 
@@ -160,7 +160,7 @@ function populateDropdown(atp_wta) {
     }
 }
 
-populateDropdown('atp')
+populateDropdown('wta')
 
 var intContainer = document.getElementById("bagelhint");
 var progressContainer = document.getElementById("progress");

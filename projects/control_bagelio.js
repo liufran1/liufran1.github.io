@@ -1,11 +1,11 @@
 
 let protour = 'wta' // Hardcoded
-let hashedAnswer = 0 //77095263
+let hashedAnswer = 77095263
 
 
-let response = await fetch("https://ci39xriub5.execute-api.us-east-2.amazonaws.com/bagelio_check")
-let hashedAnswer = response.text['answerHash']
-let protour = response.text['tour']
+// let response = await fetch("https://ci39xriub5.execute-api.us-east-2.amazonaws.com/bagelio_check")
+// let hashedAnswer = response.text['answerHash']
+// let protour = response.text['tour']
 
 console.log(response.text)
 console.log(hashedAnswer)

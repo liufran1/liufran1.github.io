@@ -8,7 +8,7 @@ let num_guesses = 0
 // console.log(num_guesses)
 
 function hashAnswer(string) {
-  var hash = 0;
+  var hash = 1;
   if (string.length == 0) return hash;
   for (x = 0; x < string.length; x++) {
     ch = string.charCodeAt(x);

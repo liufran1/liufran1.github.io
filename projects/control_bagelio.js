@@ -230,7 +230,7 @@ function get_guess() {
       }
       else {
         // console.log(num_guesses)
-        intContainer.innerHTML = `<img src="../images/bageld/mystery_${num_guesses}.gif" width="100%">`
+        intContainer.innerHTML = `<img src="https://bagelio-files.s3.us-east-2.amazonaws.com/gifs/mystery_${num_guesses}.gif" width="100%">`
         progressContainer.innerHTML = `<p>${'🟨'.repeat(num_guesses) + '⬛️'.repeat(4 - (num_guesses))}</p>`
 
       }

@@ -1,4 +1,4 @@
-var hashedAnswer = 1548112675 // Hardcoded
+var hashedAnswer = 77095263 // Hardcoded
 var protour = 'wta' // Hardcoded
 
 
@@ -12,8 +12,7 @@ function hashAnswer(string) {
   if (string.length == 0) return hash;
   for (x = 0; x < string.length; x++) {
     ch = string.charCodeAt(x);
-    hash = ((hash << 5) - hash) + ch;
-    hash = hash & hash;
+    hash = (hash * ch) % 100000000 + 1;
   }
   return hash;
 }

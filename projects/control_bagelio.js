@@ -3,14 +3,22 @@ let protour = 'wta' // Hardcoded
 let hashedAnswer = 77095263
 
 
-// let response = await fetch("https://ci39xriub5.execute-api.us-east-2.amazonaws.com/bagelio_check")
+let jsondata = "";
+let apiUrl = "https://ci39xriub5.execute-api.us-east-2.amazonaws.com/bagelio_check"
+
+async function getJson(url) {
+    let response = await fetch(url);
+    let data = await response.json()
+    return data;
+}
+
+// let response = await fetch()
 // let hashedAnswer = response.text['answerHash']
 // let protour = response.text['tour']
 
 // console.log(response.text)
 console.log(hashedAnswer)
 
-let num_guesses = 0
 
 // let guessed = false
 // console.log(num_guesses)
@@ -206,14 +214,23 @@ function clipboardShare() {
 
 }
 
+
+async function main() {
+    
+    jsondata = await getJson(apiUrl)
+    console.log(jsondata);
+    // let hashedAnswer = jsondata['answerHash']
+    // let protour = jsondata['tour']
+    // populateDropdown(protour)
+}
+
+main();
+
+
 populateDropdown(protour)
 
-var intContainer = document.getElementById("bagelhint");
-var progressContainer = document.getElementById("progress");
-var inputSelector = document.getElementById("inputSelector");
-var shareButton = "<button onclick=\"clipboardShare()\">Share</button>"
 // var inputButton = document.getElementById("inputButton");
-
+let num_guesses = 0
 
 // let selectedPlayer = document.getElementById("selectPlayer").value
 // if (selectedPlayer.length>0){
@@ -221,6 +238,12 @@ var shareButton = "<button onclick=\"clipboardShare()\">Share</button>"
 // }
 
 function get_guess() {
+  var hintContainer = document.getElementById("bagelhint");
+  var progressContainer = document.getElementById("progress");
+  var inputSelector = document.getElementById("inputSelector");
+  var shareButton = "<button onclick=\"clipboardShare()\">Share</button>"
+
+
   var selectedPlayer = document.getElementById("selectPlayer").value
   if (selectedPlayer.length == 0) {
     console.log(selectedPlayer);
@@ -231,20 +254,20 @@ function get_guess() {
 
     if (hashAnswer(selectedPlayer.toUpperCase()) != hashedAnswer) {
       if (num_guesses == 4) {
-        intContainer.innerHTML = `<p>Sorry, better luck next time</p><p>Share your results: ${'🟨'.repeat(num_guesses)}</p>` + shareButton
+        hintContainer.innerHTML = `<p>Sorry, better luck next time</p><p>Share your results: ${'🟨'.repeat(num_guesses)}</p>` + shareButton
         progressContainer.innerHTML = ''
         inputSelector.remove()
       }
       else {
         // console.log(num_guesses)
-        intContainer.innerHTML = `<img src="https://bagelio-files.s3.us-east-2.amazonaws.com/gifs/mystery_${num_guesses}.gif" width="100%">`
+        hintContainer.innerHTML = `<img src="https://bagelio-files.s3.us-east-2.amazonaws.com/gifs/mystery_${num_guesses}.gif" width="100%">`
         progressContainer.innerHTML = `<p>${'🟨'.repeat(num_guesses) + '⬛️'.repeat(4 - (num_guesses))}</p>`
 
       }
     }
     else {
       console.log(num_guesses)
-      intContainer.innerHTML = `<p>You solved it in ${num_guesses} guess${num_guesses > 1 ? 'es' : ''}</p><p>Share your results: ${'🟨'.repeat(num_guesses - 1)}🎾${'⬛️'.repeat(4 - (num_guesses - 1) - 1)}</p>` + shareButton
+      hintContainer.innerHTML = `<p>You solved it in ${num_guesses} guess${num_guesses > 1 ? 'es' : ''}</p><p>Share your results: ${'🟨'.repeat(num_guesses - 1)}🎾${'⬛️'.repeat(4 - (num_guesses - 1) - 1)}</p>` + shareButton
       progressContainer.innerHTML = ''
       inputSelector.remove()
       // update page for success
@@ -264,7 +287,7 @@ function get_guess() {
   //      if (data=='false') {
   //          num_guesses +=1;
   //          console.log(num_guesses)
-  //          intContainer.innerHTML = `<img src="../images/mystery_${num_guesses}.gif" width="100%">`
+  //          hintContainer.innerHTML = `<img src="../images/mystery_${num_guesses}.gif" width="100%">`
   //          // update progress bar
   //      }
   //      else {

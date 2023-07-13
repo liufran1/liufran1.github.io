@@ -7,7 +7,7 @@ let hashedAnswer = 77095263
 // let hashedAnswer = response.text['answerHash']
 // let protour = response.text['tour']
 
-console.log(response.text)
+// console.log(response.text)
 console.log(hashedAnswer)
 
 let num_guesses = 0

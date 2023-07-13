@@ -1,6 +1,6 @@
 
-let protour = 'wta' // Hardcoded
-let hashedAnswer = 77095263
+// let protour = 'wta' // Hardcoded
+// let hashedAnswer = 77095263
 let getparams = true
 // let hashedAnswer = 0
 
@@ -20,7 +20,7 @@ async function getJson(url) {
 // let protour = response.text['tour']
 
 // console.log(response.text)
-console.log(hashedAnswer)
+
 
 
 // let guessed = false
@@ -224,16 +224,17 @@ async function main() {
   console.log(jsondata);
   test_value += 1
   getparams = false
-  // let hashedAnswer = jsondata['answerHash']
-  // let protour = jsondata['tour']
-  // populateDropdown(protour)
+
+  let hashedAnswer = jsondata['answerHash']
+  let protour = jsondata['tour']
+  populateDropdown(protour)
 }
 
 if (getparams) {
   main();
 }
 
-
+console.log(hashedAnswer)
 
 populateDropdown(protour)
 

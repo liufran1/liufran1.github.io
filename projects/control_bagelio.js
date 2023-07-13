@@ -1,8 +1,9 @@
 
 let protour = 'wta' // Hardcoded
-// let hashedAnswer = 77095263
-let hashedAnswer = 0
+let hashedAnswer = 77095263
+// let hashedAnswer = 0
 
+let test_value = 0
 
 let jsondata = "";
 let apiUrl = "https://ci39xriub5.execute-api.us-east-2.amazonaws.com/bagelio_check"
@@ -220,15 +221,16 @@ async function main() {
     
     jsondata = await getJson(apiUrl)
     console.log(jsondata);
-    let hashedAnswer = jsondata['answerHash']
-    let protour = jsondata['tour']
-    populateDropdown(protour)
+    test_value += 1
+    // let hashedAnswer = jsondata['answerHash']
+    // let protour = jsondata['tour']
+    // populateDropdown(protour)
 }
 
 main();
 
 
-// populateDropdown(protour)
+populateDropdown(protour)
 
 // var inputButton = document.getElementById("inputButton");
 let num_guesses = 0

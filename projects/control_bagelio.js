@@ -1,6 +1,7 @@
 
 let protour = 'wta' // Hardcoded
 let hashedAnswer = 77095263
+let getparams = true
 // let hashedAnswer = 0
 
 let test_value = 0
@@ -9,9 +10,9 @@ let jsondata = "";
 let apiUrl = "https://ci39xriub5.execute-api.us-east-2.amazonaws.com/bagelio_check"
 
 async function getJson(url) {
-    let response = await fetch(url);
-    let data = await response.json()
-    return data;
+  let response = await fetch(url);
+  let data = await response.json()
+  return data;
 }
 
 // let response = await fetch()
@@ -218,16 +219,20 @@ function clipboardShare() {
 
 
 async function main() {
-    
-    jsondata = await getJson(apiUrl)
-    console.log(jsondata);
-    test_value += 1
-    // let hashedAnswer = jsondata['answerHash']
-    // let protour = jsondata['tour']
-    // populateDropdown(protour)
+
+  jsondata = await getJson(apiUrl)
+  console.log(jsondata);
+  test_value += 1
+  getparams = false
+  // let hashedAnswer = jsondata['answerHash']
+  // let protour = jsondata['tour']
+  // populateDropdown(protour)
 }
 
-main();
+if (getparams) {
+  main();
+}
+
 
 
 populateDropdown(protour)

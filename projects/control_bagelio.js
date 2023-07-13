@@ -18,6 +18,18 @@ function hashAnswer(string) {
   return hash;
 }
 
+
+// $('select').change(function() {
+// // alert("hi");
+//     var op =$(this).val();
+//     if(op !='') {                 
+//     $('input[name="processor_details"]').prop('disabled',false);
+// } else {
+//     $('input[name="processor_details"]').prop('disabled', true);
+// }   
+// });
+
+
 function populateDropdown(atp_wta) {
   var select = document.getElementById("selectPlayer");
 
@@ -193,34 +205,43 @@ var intContainer = document.getElementById("bagelhint");
 var progressContainer = document.getElementById("progress");
 var inputSelector = document.getElementById("inputSelector");
 var shareButton = "<button onclick=\"clipboardShare()\">Share</button>"
+// var inputButton = document.getElementById("inputButton");
 
+
+// let selectedPlayer = document.getElementById("selectPlayer").value
+// if (selectedPlayer.length>0){
+//     inputButton.prop('disabled',false);
+// }
 
 function get_guess() {
   var selectedPlayer = document.getElementById("selectPlayer").value
-  console.log(selectedPlayer)
-  num_guesses += 1;
-
-  if (hashAnswer(selectedPlayer) != hashedAnswer) {
-    if (num_guesses == 4) {
-      intContainer.innerHTML = `<p>Sorry, better luck next time</p><p>Share your results: ${'🟨'.repeat(num_guesses)}</p>` + shareButton
-      progressContainer.innerHTML = ''
-      inputSelector.remove()
-    }
-    else {
-      // console.log(num_guesses)
-      intContainer.innerHTML = `<img src="../images/bageld/mystery_${num_guesses}.gif" width="100%">`
-      progressContainer.innerHTML = `<p>${'🟨'.repeat(num_guesses) + '⬛️'.repeat(4 - (num_guesses))}</p>`
-
-    }
-
-
+  if (selectedPlayer.length == 0) {
+    console.log(selectedPlayer);
   }
   else {
-    console.log(num_guesses)
-    intContainer.innerHTML = `<p>You solved it in ${num_guesses} guess${num_guesses > 1 ? 'es' : ''}</p><p>Share your results: ${'🟨'.repeat(num_guesses - 1)}🎾${'⬛️'.repeat(4 - (num_guesses - 1) - 1)}</p>` + shareButton
-    progressContainer.innerHTML = ''
-    inputSelector.remove()
-    // update page for success
+    console.log(selectedPlayer)
+    num_guesses += 1;
+
+    if (hashAnswer(selectedPlayer) != hashedAnswer) {
+      if (num_guesses == 4) {
+        intContainer.innerHTML = `<p>Sorry, better luck next time</p><p>Share your results: ${'🟨'.repeat(num_guesses)}</p>` + shareButton
+        progressContainer.innerHTML = ''
+        inputSelector.remove()
+      }
+      else {
+        // console.log(num_guesses)
+        intContainer.innerHTML = `<img src="../images/bageld/mystery_${num_guesses}.gif" width="100%">`
+        progressContainer.innerHTML = `<p>${'🟨'.repeat(num_guesses) + '⬛️'.repeat(4 - (num_guesses))}</p>`
+
+      }
+    }
+    else {
+      console.log(num_guesses)
+      intContainer.innerHTML = `<p>You solved it in ${num_guesses} guess${num_guesses > 1 ? 'es' : ''}</p><p>Share your results: ${'🟨'.repeat(num_guesses - 1)}🎾${'⬛️'.repeat(4 - (num_guesses - 1) - 1)}</p>` + shareButton
+      progressContainer.innerHTML = ''
+      inputSelector.remove()
+      // update page for success
+    }
   }
   // 
 

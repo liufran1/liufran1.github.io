@@ -21,11 +21,12 @@
   <div id='inputSelector'>
       <form id="playerSelector">
         <select id="selectPlayer">
-          <option>Choose a player</option>
+          <option value=''>Choose a player</option>
         </select>
       </form>
       
-      <button onclick="get_guess()">Guess</button>
+      <button id="inputButton" onclick="get_guess()">Guess</button> 
+      <!-- disabled="true" -->
   </div>
   <div id='progress'>
     <p>⬛️⬛️⬛️⬛️</p>

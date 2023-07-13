@@ -1,18 +1,20 @@
-var hashedAnswer = 77095263 // Hardcoded
-var protour = 'wta' // Hardcoded
+// var hashedAnswer = 77095263 // Hardcoded
+let protour = 'wta' // Hardcoded
+let hashedAnswer = 0
 
 fetch("https://ci39xriub5.execute-api.us-east-2.amazonaws.com/bagelio_check")
   .then(response => response.text())
   .then(data => {
-    console.log(data)
+    hashedAnswer = data['answerHash']
+    protour = data['answerHash']
+    // console.log(data)
   })
   .catch(error => {
     // outputContainer.innerHTML = "We ran into an error while getting reviews, try again in a bit.";
     console.error(error);
   });
 
-// var hashedAnswer = data['answerHash']
-// var protour = data['answerHash'] 
+console.log(hashedAnswer)
 
 let num_guesses = 0
 

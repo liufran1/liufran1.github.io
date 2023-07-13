@@ -1,6 +1,7 @@
 
 let protour = 'wta' // Hardcoded
-let hashedAnswer = 77095263
+// let hashedAnswer = 77095263
+let hashedAnswer = 0
 
 
 let jsondata = "";
@@ -219,15 +220,15 @@ async function main() {
     
     jsondata = await getJson(apiUrl)
     console.log(jsondata);
-    // let hashedAnswer = jsondata['answerHash']
-    // let protour = jsondata['tour']
-    // populateDropdown(protour)
+    let hashedAnswer = jsondata['answerHash']
+    let protour = jsondata['tour']
+    populateDropdown(protour)
 }
 
 main();
 
 
-populateDropdown(protour)
+// populateDropdown(protour)
 
 // var inputButton = document.getElementById("inputButton");
 let num_guesses = 0

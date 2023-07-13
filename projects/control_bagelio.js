@@ -1,22 +1,13 @@
 
 let protour = 'wta' // Hardcoded
-let hashedAnswer = 0
+let hashedAnswer = 0 //77095263
 
 
-fetch("https://ci39xriub5.execute-api.us-east-2.amazonaws.com/bagelio_check")
-  .then(response => response.text())
-  .then(data => {
-    hashedAnswer = data['answerHash']
-    protour = data['answerHash']
-    // console.log(data)
-  })
-  .catch(error => {
-    // outputContainer.innerHTML = "We ran into an error while getting reviews, try again in a bit.";
-    console.error(error);
+let response = await fetch("https://ci39xriub5.execute-api.us-east-2.amazonaws.com/bagelio_check")
+let hashedAnswer = response.text['answerHash']
+let protour = response.text['tour']
 
-  });
-
-
+console.log(response.text)
 console.log(hashedAnswer)
 
 let num_guesses = 0

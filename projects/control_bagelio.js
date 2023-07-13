@@ -1,4 +1,4 @@
-var hashedAnswer = -489961661 // Hardcoded
+var hashedAnswer = 1548112675 // Hardcoded
 var protour = 'wta' // Hardcoded
 
 
@@ -222,7 +222,7 @@ function get_guess() {
     console.log(selectedPlayer)
     num_guesses += 1;
 
-    if (hashAnswer(selectedPlayer) != hashedAnswer) {
+    if (hashAnswer(selectedPlayer.toUpperCase()) != hashedAnswer) {
       if (num_guesses == 4) {
         intContainer.innerHTML = `<p>Sorry, better luck next time</p><p>Share your results: ${'🟨'.repeat(num_guesses)}</p>` + shareButton
         progressContainer.innerHTML = ''

@@ -1,7 +1,7 @@
 var hashedAnswer = 77095263 // Hardcoded
 var protour = 'wta' // Hardcoded
 
-fetch("https://ci39xriub5.execute-api.us-east-2.amazonaws.com/bagelio_check?player_name=" + encodeURIComponent(selectedPlayer))
+fetch("https://ci39xriub5.execute-api.us-east-2.amazonaws.com/bagelio_check")
   .then(response => response.text())
   .then(data => {
     console.log(data)

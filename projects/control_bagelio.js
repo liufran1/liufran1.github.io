@@ -1,6 +1,6 @@
 // var hashedAnswer = 77095263 // Hardcoded
 let protour = 'wta' // Hardcoded
-let hashedAnswer = 0
+// let hashedAnswer = 0
 
 fetch("https://ci39xriub5.execute-api.us-east-2.amazonaws.com/bagelio_check")
   .then(response => response.text())
@@ -14,7 +14,7 @@ fetch("https://ci39xriub5.execute-api.us-east-2.amazonaws.com/bagelio_check")
     console.error(error);
   });
 
-console.log(hashedAnswer)
+
 
 let num_guesses = 0
 
@@ -230,6 +230,8 @@ function get_guess() {
   var selectedPlayer = document.getElementById("selectPlayer").value
   if (selectedPlayer.length == 0) {
     console.log(selectedPlayer);
+    console.log(hashAnswer(selectedPlayer.toUpperCase()));
+    console.log(hashedAnswer);
   }
   else {
     console.log(selectedPlayer)

@@ -3,7 +3,7 @@
 // let hashedAnswer = 77095263
 let getparams = true
 // let hashedAnswer = 0
-let experimentMessage = '<p>Thanks for playing. bageld is currently in beta, so there are still kinks to work out and there won\'t be daily updates just yet. Check back soon for improvements </p>'
+let experimentMessage = '<p>Thanks for playing! bageld is currently in beta, so there are still kinks to work out and there won\'t be daily updates just yet. Check back soon for improvements </p>'
 
 let hashedAnswer = document.getElementById('hashedAnswer').getAttribute('hashAnswer')
 
@@ -270,7 +270,9 @@ function get_guess() {
     console.log(hashAnswer(selectedPlayer.toUpperCase()))
     num_guesses += 1;
 
-    if (hashAnswer(selectedPlayer.toUpperCase()) != hashedAnswer) {
+    console.log(jsondata['answerHash'])
+
+    if (hashAnswer(selectedPlayer.toUpperCase()) != jsondata['answerHash']) {
       if (num_guesses == 4) {
         hintContainer.innerHTML = experimentMessage+`<p>Sorry, better luck next time</p><p>Share your results: ${'🟨'.repeat(num_guesses)}</p>` + shareButton
         progressContainer.innerHTML = ''

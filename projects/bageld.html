@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> <!-- to fix -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
   <link rel="stylesheet" href="../base.css">
+  <script src="https://jsuites.net/v4/jsuites.js"></script>  
+
   <title>Guess The Player</title>
 </head>
 
@@ -18,13 +21,13 @@
   <div id="bagelhint">
       <img src="https://bagelio-files.s3.us-east-2.amazonaws.com/gifs/mystery_0.gif" width="100%">
   </div>
+  <div id="dropdown"></div>
   <div id='inputSelector'>
-      <form id="playerSelector">
+<!--       <form id="playerSelector">
         <select id="selectPlayer">
           <option value=''>Choose a player</option>
         </select>
-      </form>
-      
+      </form> -->
       <button id="inputButton" onclick="get_guess()">Guess</button> 
       <!-- disabled="true" -->
   </div>

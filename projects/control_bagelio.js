@@ -197,6 +197,137 @@ function populateDropdown(atp_wta) {
   }
 }
 
+function get_tour_list(atp_wta) {
+  const atp_list = [{value: 'Carlos Alcaraz', text: 'Carlos Alcaraz'},
+ {value: 'Novak Djokovic', text: 'Novak Djokovic'},
+ {value: 'Daniil Medvedev', text: 'Daniil Medvedev'},
+ {value: 'Casper Ruud', text: 'Casper Ruud'},
+ {value: 'Stefanos Tsitsipas', text: 'Stefanos Tsitsipas'},
+ {value: 'Holger Rune', text: 'Holger Rune'},
+ {value: 'Andrey Rublev', text: 'Andrey Rublev'},
+ {value: 'Jannik Sinner', text: 'Jannik Sinner'},
+ {value: 'Taylor Fritz', text: 'Taylor Fritz'},
+ {value: 'Frances Tiafoe', text: 'Frances Tiafoe'},
+ {value: 'Karen Khachanov', text: 'Karen Khachanov'},
+ {value: 'Aliassime Auger', text: 'Aliassime Auger'},
+ {value: 'Cameron Norrie', text: 'Cameron Norrie'},
+ {value: 'Borna Coric', text: 'Borna Coric'},
+ {value: 'Tommy Paul', text: 'Tommy Paul'},
+ {value: 'Lorenzo Musetti', text: 'Lorenzo Musetti'},
+ {value: 'Minaur De', text: 'Minaur De'},
+ {value: 'Hubert Hurkacz', text: 'Hubert Hurkacz'},
+ {value: 'Francisco Cerundolo', text: 'Francisco Cerundolo'},
+ {value: 'Pablo Carreno-Busta', text: 'Pablo Carreno-Busta'},
+ {value: 'Alexander Zverev', text: 'Alexander Zverev'},
+ {value: 'Jan-Lennard Struff', text: 'Jan-Lennard Struff'},
+ {value: 'Roberto Bautista-Agut', text: 'Roberto Bautista-Agut'},
+ {value: 'Grigor Dimitrov', text: 'Grigor Dimitrov'},
+ {value: 'Sebastian Korda', text: 'Sebastian Korda'},
+ {value: 'Alexander Bublik', text: 'Alexander Bublik'},
+ {value: 'Yoshihito Nishioka', text: 'Yoshihito Nishioka'},
+ {value: 'Nicolas Jarry', text: 'Nicolas Jarry'},
+ {value: 'Denis Shapovalov', text: 'Denis Shapovalov'},
+ {value: 'Daniel Evans', text: 'Daniel Evans'},
+ {value: 'Tallon Griekspoor', text: 'Tallon Griekspoor'},
+ {value: 'Tomas Etcheverry', text: 'Tomas Etcheverry'},
+ {value: 'Nick Kyrgios', text: 'Nick Kyrgios'},
+ {value: 'Fokina Davidovich', text: 'Fokina Davidovich'},
+ {value: 'Adrian Mannarino', text: 'Adrian Mannarino'},
+ {value: 'Ben Shelton', text: 'Ben Shelton'},
+ {value: 'Jiri Lehecka', text: 'Jiri Lehecka'},
+ {value: 'Matteo Berrettini', text: 'Matteo Berrettini'},
+ {value: 'Ugo Humbert', text: 'Ugo Humbert'},
+ {value: 'Andy Murray', text: 'Andy Murray'},
+ {value: 'Miomir Kecmanovic', text: 'Miomir Kecmanovic'},
+ {value: 'Lorenzo Sonego', text: 'Lorenzo Sonego'},
+ {value: 'Christopher Eubanks', text: 'Christopher Eubanks'},
+ {value: 'De Van', text: 'De Van'},
+ {value: 'Yannick Hanfmann', text: 'Yannick Hanfmann'},
+ {value: 'Sebastian Baez', text: 'Sebastian Baez'},
+ {value: 'Emil Ruusuvuori', text: 'Emil Ruusuvuori'},
+ {value: 'Jeffrey Wolf', text: 'Jeffrey Wolf'},
+ {value: 'Gregoire Barrere', text: 'Gregoire Barrere'},
+ {value: 'Aslan Karatsev', text: 'Aslan Karatsev'},
+ {value: 'Anja Stankovic', text: 'Anja Stankovic'},
+ {value: 'Yulia Starodubtseva', text: 'Yulia Starodubtseva'},
+ {value: 'Stefania Bojica', text: 'Stefania Bojica'},
+ {value: 'Wild Seyboth', text: 'Wild Seyboth'},
+ {value: 'Goncalo Oliveira', text: 'Goncalo Oliveira'},
+ {value: 'Antoine Hoang', text: 'Antoine Hoang'},
+ {value: 'Dominic Thiem', text: 'Dominic Thiem'},
+ {value: 'Francesco Passaro', text: 'Francesco Passaro'},
+ {value: 'Nagi Hanatani', text: 'Nagi Hanatani'},
+ {value: 'Reka-Luca Jani', text: 'Reka-Luca Jani'}];
+  const wta_list = [{value: 'Iga Swiatek', text: 'Iga Swiatek'},
+ {value: 'Aryna Sabalenka', text: 'Aryna Sabalenka'},
+ {value: 'Elena Rybakina', text: 'Elena Rybakina'},
+ {value: 'Jessica Pegula', text: 'Jessica Pegula'},
+ {value: 'Caroline Garcia', text: 'Caroline Garcia'},
+ {value: 'Ons Jabeur', text: 'Ons Jabeur'},
+ {value: 'Cori Gauff', text: 'Cori Gauff'},
+ {value: 'Maria Sakkari', text: 'Maria Sakkari'},
+ {value: 'Petra Kvitova', text: 'Petra Kvitova'},
+ {value: 'Darya Kasatkina', text: 'Darya Kasatkina'},
+ {value: 'Barbora Krejcikova', text: 'Barbora Krejcikova'},
+ {value: 'Veronika Kudermetova', text: 'Veronika Kudermetova'},
+ {value: 'Maia Haddad', text: 'Maia Haddad'},
+ {value: 'Belinda Bencic', text: 'Belinda Bencic'},
+ {value: 'Ludmilla Samsonova', text: 'Ludmilla Samsonova'},
+ {value: 'Karolina Muchova', text: 'Karolina Muchova'},
+ {value: 'Jelena Ostapenko', text: 'Jelena Ostapenko'},
+ {value: 'Madison Keys', text: 'Madison Keys'},
+ {value: 'Karolina Pliskova', text: 'Karolina Pliskova'},
+ {value: 'Viktoria Azarenka', text: 'Viktoria Azarenka'},
+ {value: 'Donna Vekic', text: 'Donna Vekic'},
+ {value: 'Ekaterina Alexandrova', text: 'Ekaterina Alexandrova'},
+ {value: 'Anastasia Potapova', text: 'Anastasia Potapova'},
+ {value: 'Magda Linette', text: 'Magda Linette'},
+ {value: 'Qinwen Zheng', text: 'Qinwen Zheng'},
+ {value: 'Anhelina Kalinina', text: 'Anhelina Kalinina'},
+ {value: 'Bernarda Pera', text: 'Bernarda Pera'},
+ {value: 'Elise Mertens', text: 'Elise Mertens'},
+ {value: 'Petra Martic', text: 'Petra Martic'},
+ {value: 'Irina Begu', text: 'Irina Begu'},
+ {value: 'Mayar Sherif', text: 'Mayar Sherif'},
+ {value: 'Katerina Siniakova', text: 'Katerina Siniakova'},
+ {value: 'Marie Bouzkova', text: 'Marie Bouzkova'},
+ {value: 'Lin Zhu', text: 'Lin Zhu'},
+ {value: 'Paula Badosa', text: 'Paula Badosa'},
+ {value: 'Marta Kostyuk', text: 'Marta Kostyuk'},
+ {value: 'Sorana-Mihaela Cirstea', text: 'Sorana-Mihaela Cirstea'},
+ {value: 'Shuai Zhang', text: 'Shuai Zhang'},
+ {value: 'Sloane Stephens', text: 'Sloane Stephens'},
+ {value: 'Anna Blinkova', text: 'Anna Blinkova'},
+ {value: 'Varvara Gracheva', text: 'Varvara Gracheva'},
+ {value: 'Marketa Vondrousova', text: 'Marketa Vondrousova'},
+ {value: 'Elisabetta Cocciaretto', text: 'Elisabetta Cocciaretto'},
+ {value: 'Jasmine Paolini', text: 'Jasmine Paolini'},
+ {value: 'Linda Noskova', text: 'Linda Noskova'},
+ {value: 'Lauren Davis', text: 'Lauren Davis'},
+ {value: 'Lucia Bronzetti', text: 'Lucia Bronzetti'},
+ {value: 'Camila Giorgi', text: 'Camila Giorgi'},
+ {value: 'Shelby Rogers', text: 'Shelby Rogers'},
+ {value: 'Bianca Andreescu', text: 'Bianca Andreescu'},
+ {value: 'Anja Stankovic', text: 'Anja Stankovic'},
+ {value: 'Yulia Starodubtseva', text: 'Yulia Starodubtseva'},
+ {value: 'Stefania Bojica', text: 'Stefania Bojica'},
+ {value: 'Wild Seyboth', text: 'Wild Seyboth'},
+ {value: 'Goncalo Oliveira', text: 'Goncalo Oliveira'},
+ {value: 'Antoine Hoang', text: 'Antoine Hoang'},
+ {value: 'Dominic Thiem', text: 'Dominic Thiem'},
+ {value: 'Francesco Passaro', text: 'Francesco Passaro'},
+ {value: 'Nagi Hanatani', text: 'Nagi Hanatani'},
+ {value: 'Reka-Luca Jani', text: 'Reka-Luca Jani'}];
+}
+
+
+
+var dropdown = jSuites.dropdown(document.getElementById('dropdown'), {
+    data:get_tour_list(jsondata['tour']),
+    width:'280px',
+    autocomplete: true,
+});
+
 function clipboardShare() {
   // Get the text field
   // var copyText = document.getElementById("myInput");
@@ -232,7 +363,7 @@ async function main() {
 
   let hashedAnswer = jsondata['answerHash']
   let protour = jsondata['tour']
-  populateDropdown(protour)
+  // populateDropdown(protour)
   document.getElementById('hashedAnswer').setAttribute('hashAnswer', hashedAnswer) // I don't understand javascript lmao
 
 }
@@ -261,7 +392,9 @@ function get_guess() {
   var shareButton = "<button onclick=\"clipboardShare()\">Share</button>"
 
   console.log(jsondata)
-  var selectedPlayer = document.getElementById("selectPlayer").value
+  console.log(dropdown.getValue())
+  // var selectedPlayer = document.getElementById("selectPlayer").value
+  var selectedPlayer = dropdown.getValue()
   if (selectedPlayer.length == 0) {
     console.log(selectedPlayer);
   }

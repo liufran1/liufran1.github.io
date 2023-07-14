@@ -3,7 +3,7 @@
 // let hashedAnswer = 77095263
 let getparams = true
 // let hashedAnswer = 0
-
+let experimentMessage = '<p>Thanks for playing. bageld is currently in beta, so there are still kinks to work out and there won\'t be daily updates just yet. Check back soon for improvements </p>'
 
 let hashedAnswer = document.getElementById('hashedAnswer').getAttribute('hashAnswer')
 
@@ -243,6 +243,7 @@ if (getparams) {
 
 console.log(hashedAnswer)
 
+
 // populateDropdown(protour)
 
 // var inputButton = document.getElementById("inputButton");
@@ -259,18 +260,19 @@ function get_guess() {
   var inputSelector = document.getElementById("inputSelector");
   var shareButton = "<button onclick=\"clipboardShare()\">Share</button>"
 
-
+  console.log(jsondata)
   var selectedPlayer = document.getElementById("selectPlayer").value
   if (selectedPlayer.length == 0) {
     console.log(selectedPlayer);
   }
   else {
     console.log(selectedPlayer)
+    console.log(hashAnswer(selectedPlayer.toUpperCase()))
     num_guesses += 1;
 
     if (hashAnswer(selectedPlayer.toUpperCase()) != hashedAnswer) {
       if (num_guesses == 4) {
-        hintContainer.innerHTML = `<p>Sorry, better luck next time</p><p>Share your results: ${'🟨'.repeat(num_guesses)}</p>` + shareButton
+        hintContainer.innerHTML = experimentMessage+`<p>Sorry, better luck next time</p><p>Share your results: ${'🟨'.repeat(num_guesses)}</p>` + shareButton
         progressContainer.innerHTML = ''
         inputSelector.remove()
       }
@@ -283,7 +285,7 @@ function get_guess() {
     }
     else {
       console.log(num_guesses)
-      hintContainer.innerHTML = `<p>You solved it in ${num_guesses} guess${num_guesses > 1 ? 'es' : ''}</p><p>Share your results: ${'🟨'.repeat(num_guesses - 1)}🎾${'⬛️'.repeat(4 - (num_guesses - 1) - 1)}</p>` + shareButton
+      hintContainer.innerHTML = experimentMessage + `<p>You solved it in ${num_guesses} guess${num_guesses > 1 ? 'es' : ''}</p><p>Share your results: ${'🟨'.repeat(num_guesses - 1)}🎾${'⬛️'.repeat(4 - (num_guesses - 1) - 1)}</p>` + shareButton
       progressContainer.innerHTML = ''
       inputSelector.remove()
       // update page for success

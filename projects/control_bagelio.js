@@ -400,6 +400,7 @@ function get_guess() {
   var progressContainer = document.getElementById("progress");
   var inputSelector = document.getElementById("inputSelector");
   var shareButton = "<button onclick=\"clipboardShare()\">Share</button>"
+  var dropdowndiv = document.getElementById("dropdown");
 
   console.log(jsondata)
   console.log(dropdown.getValue())
@@ -420,6 +421,7 @@ function get_guess() {
         hintContainer.innerHTML = experimentMessage+`<p>Sorry, better luck next time</p><p>Share your results: ${'🟨'.repeat(num_guesses)}</p>` + shareButton
         progressContainer.innerHTML = ''
         inputSelector.remove()
+        dropdowndiv.remove()
       }
       else {
         // console.log(num_guesses)
@@ -433,6 +435,7 @@ function get_guess() {
       hintContainer.innerHTML = experimentMessage + `<p>You solved it in ${num_guesses} guess${num_guesses > 1 ? 'es' : ''}</p><p>Share your results: ${'🟨'.repeat(num_guesses - 1)}🎾${'⬛️'.repeat(4 - (num_guesses - 1) - 1)}</p>` + shareButton
       progressContainer.innerHTML = ''
       inputSelector.remove()
+      dropdowndiv.remove()
       // update page for success
     }
   }

@@ -5,7 +5,7 @@ let getparams = true
 // let hashedAnswer = 0
 
 
-let hashedAnswer = document.getElementById('hashAnswer').getAttribute('hashedAnswer')
+let hashedAnswer = document.getElementById('hashedAnswer').getAttribute('hashAnswer')
 
 
 // let test_value = 0

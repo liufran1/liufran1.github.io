@@ -322,11 +322,8 @@ function get_tour_list(atp_wta) {
 
 
 
-var dropdown = jSuites.dropdown(document.getElementById('dropdown'), {
-    data:get_tour_list(jsondata['tour']),
-    width:'280px',
-    autocomplete: true,
-});
+var dropdown = ""
+
 
 function clipboardShare() {
   // Get the text field
@@ -364,7 +361,11 @@ async function main() {
   let hashedAnswer = jsondata['answerHash']
   let protour = jsondata['tour']
   // populateDropdown(protour)
-  document.getElementById('hashedAnswer').setAttribute('hashAnswer', hashedAnswer) // I don't understand javascript lmao
+  dropdown =   jSuites.dropdown(document.getElementById('dropdown'), {
+    data:get_tour_list(protour),
+    width:'280px',
+    autocomplete: true,
+});
 
 }
 

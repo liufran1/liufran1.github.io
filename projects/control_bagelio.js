@@ -358,11 +358,11 @@ async function main() {
   // test_value += 1
   getparams = false
 
-  // let hashedAnswer = jsondata['answerHash']
-  let protour = jsondata['tour']
+  let listElems = get_tour_list(jsondata['tour'])
   // populateDropdown(protour)
+  console.log(listElems)
   dropdown =   jSuites.dropdown(document.getElementById('dropdown'), {
-    data:get_tour_list(protour),
+    data:listElems,
     width:'280px',
     autocomplete: true,
 });

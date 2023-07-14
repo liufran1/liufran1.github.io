@@ -5,7 +5,7 @@ let getparams = true
 // let hashedAnswer = 0
 let experimentMessage = '<p>Thanks for playing! bageld is currently in beta, so there are still kinks to work out and there won\'t be daily updates just yet. Check back soon for improvements </p>'
 
-let hashedAnswer = document.getElementById('hashedAnswer').getAttribute('hashAnswer')
+// let hashedAnswer = document.getElementById('hashedAnswer').getAttribute('hashAnswer')
 
 
 // let test_value = 0
@@ -358,7 +358,7 @@ async function main() {
   // test_value += 1
   getparams = false
 
-  let hashedAnswer = jsondata['answerHash']
+  // let hashedAnswer = jsondata['answerHash']
   let protour = jsondata['tour']
   // populateDropdown(protour)
   dropdown =   jSuites.dropdown(document.getElementById('dropdown'), {
@@ -373,7 +373,7 @@ if (getparams) {
   main();
 }
 
-console.log(hashedAnswer)
+// console.log(hashedAnswer)
 
 
 // populateDropdown(protour)

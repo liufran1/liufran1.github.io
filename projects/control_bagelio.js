@@ -2,9 +2,9 @@
 // let protour = 'wta' // Hardcoded
 // let hashedAnswer = 77095263
 let getparams = true
-// let hashedAnswer = 0
+let hashedAnswer = 0
 
-let test_value = 0
+// let test_value = 0
 
 let jsondata = "";
 let apiUrl = "https://ci39xriub5.execute-api.us-east-2.amazonaws.com/bagelio_check"
@@ -222,10 +222,11 @@ async function main() {
 
   jsondata = await getJson(apiUrl)
   console.log(jsondata);
-  test_value += 1
+  console.log('API call successful')
+  // test_value += 1
   getparams = false
 
-  let hashedAnswer = jsondata['answerHash']
+  hashedAnswer = jsondata['answerHash']
   let protour = jsondata['tour']
   populateDropdown(protour)
 }
@@ -236,7 +237,7 @@ if (getparams) {
 
 console.log(hashedAnswer)
 
-populateDropdown(protour)
+// populateDropdown(protour)
 
 // var inputButton = document.getElementById("inputButton");
 let num_guesses = 0
@@ -282,31 +283,5 @@ function get_guess() {
       // update page for success
     }
   }
-  // 
-
-
-  // fetch("https://ci39xriub5.execute-api.us-east-2.amazonaws.com/bagelio_check?player_name=" + encodeURIComponent(selectedPlayer)), 
-  // {
-  //  'Access-Control-Allow-Origin':'*'
-  // } 
-  //     .then(response => response.text())
-  //     .then(data => {
-  //       // outputContainer.innerHTML = `<p align="left">${data}</p>`;
-  //      console.log(data)
-  //      if (data=='false') {
-  //          num_guesses +=1;
-  //          console.log(num_guesses)
-  //          hintContainer.innerHTML = `<img src="../images/mystery_${num_guesses}.gif" width="100%">`
-  //          // update progress bar
-  //      }
-  //      else {
-  //          console.log(num_guesses)
-  //          // update page for success
-  //      }
-
-  //     })
-  //     .catch(error => {
-  //       // outputContainer.innerHTML = "We ran into an error while getting reviews, try again in a bit.";
-  //       console.error(error);
-  //     });
+ 
 }

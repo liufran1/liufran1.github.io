@@ -2,7 +2,9 @@
 // let protour = 'wta' // Hardcoded
 // let hashedAnswer = 77095263
 let getparams = true
-let hashedAnswer = 0
+// let hashedAnswer = 0
+
+let hashedAnswer = document.getElementById('hashAnswer').getAttribute('hashedAnswer')
 
 // let test_value = 0
 
@@ -229,6 +231,8 @@ async function main() {
   hashedAnswer = jsondata['answerHash']
   let protour = jsondata['tour']
   populateDropdown(protour)
+  document.getElementById('hashedAnswer').setAttribute('hashAnswer', hashedAnswer) // I don't understand javascript lmao
+
 }
 
 if (getparams) {
@@ -283,5 +287,5 @@ function get_guess() {
       // update page for success
     }
   }
- 
+
 }

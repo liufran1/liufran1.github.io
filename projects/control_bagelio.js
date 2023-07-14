@@ -198,6 +198,7 @@ function populateDropdown(atp_wta) {
 }
 
 function get_tour_list(atp_wta) {
+  
   const atp_list = [{value: 'Carlos Alcaraz', text: 'Carlos Alcaraz'},
  {value: 'Novak Djokovic', text: 'Novak Djokovic'},
  {value: 'Daniil Medvedev', text: 'Daniil Medvedev'},
@@ -258,6 +259,7 @@ function get_tour_list(atp_wta) {
  {value: 'Francesco Passaro', text: 'Francesco Passaro'},
  {value: 'Nagi Hanatani', text: 'Nagi Hanatani'},
  {value: 'Reka-Luca Jani', text: 'Reka-Luca Jani'}];
+  
   const wta_list = [{value: 'Iga Swiatek', text: 'Iga Swiatek'},
  {value: 'Aryna Sabalenka', text: 'Aryna Sabalenka'},
  {value: 'Elena Rybakina', text: 'Elena Rybakina'},
@@ -318,6 +320,13 @@ function get_tour_list(atp_wta) {
  {value: 'Francesco Passaro', text: 'Francesco Passaro'},
  {value: 'Nagi Hanatani', text: 'Nagi Hanatani'},
  {value: 'Reka-Luca Jani', text: 'Reka-Luca Jani'}];
+
+  if (atp_wta == 'atp'){
+    return atp_list
+  }
+  else {
+    return wta_list
+  }
 }
 
 

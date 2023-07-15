@@ -1,15 +1,9 @@
 
-// let protour = 'wta' // Hardcoded
-// let hashedAnswer = 77095263
+let num_guesses = 0
 let getparams = true
-// let hashedAnswer = 0
 let experimentMessage = '<p>Thanks for playing! bageld is currently in beta, so there are still kinks to work out and there won\'t be daily updates just yet. Check back soon for improvements </p>'
 
-// let hashedAnswer = document.getElementById('hashedAnswer').getAttribute('hashAnswer')
-
-
-// let test_value = 0
-
+var dropdown = ""
 let jsondata = "";
 let apiUrl = "https://ci39xriub5.execute-api.us-east-2.amazonaws.com/bagelio_check"
 
@@ -19,16 +13,6 @@ async function getJson(url) {
   return data;
 }
 
-// let response = await fetch()
-// let hashedAnswer = response.text['answerHash']
-// let protour = response.text['tour']
-
-// console.log(response.text)
-
-
-
-// let guessed = false
-// console.log(num_guesses)
 
 function hashAnswer(string) {
   var hash = 1;
@@ -50,152 +34,6 @@ function hashAnswer(string) {
 //     $('input[name="processor_details"]').prop('disabled', true);
 // }   
 // });
-
-
-function populateDropdown(atp_wta) {
-  var select = document.getElementById("selectPlayer");
-
-  // Hardcode these lists to start
-  var atp_list = ['Carlos Alcaraz',
-    'Novak Djokovic',
-    'Daniil Medvedev',
-    'Casper Ruud',
-    'Stefanos Tsitsipas',
-    'Holger Rune',
-    'Andrey Rublev',
-    'Jannik Sinner',
-    'Taylor Fritz',
-    'Frances Tiafoe',
-    'Karen Khachanov',
-    'Aliassime Auger',
-    'Cameron Norrie',
-    'Borna Coric',
-    'Tommy Paul',
-    'Lorenzo Musetti',
-    'Minaur De',
-    'Hubert Hurkacz',
-    'Francisco Cerundolo',
-    'Pablo Carreno-Busta',
-    'Alexander Zverev',
-    'Jan-Lennard Struff',
-    'Roberto Bautista-Agut',
-    'Grigor Dimitrov',
-    'Sebastian Korda',
-    'Alexander Bublik',
-    'Yoshihito Nishioka',
-    'Nicolas Jarry',
-    'Denis Shapovalov',
-    'Daniel Evans',
-    'Tallon Griekspoor',
-    'Tomas Etcheverry',
-    'Nick Kyrgios',
-    'Fokina Davidovich',
-    'Adrian Mannarino',
-    'Ben Shelton',
-    'Jiri Lehecka',
-    'Matteo Berrettini',
-    'Ugo Humbert',
-    'Andy Murray',
-    'Miomir Kecmanovic',
-    'Lorenzo Sonego',
-    'Christopher Eubanks',
-    'De Van',
-    'Yannick Hanfmann',
-    'Sebastian Baez',
-    'Emil Ruusuvuori',
-    'Jeffrey Wolf',
-    'Gregoire Barrere',
-    'Aslan Karatsev',
-    'Anja Stankovic',
-    'Yulia Starodubtseva',
-    'Wild Seyboth',
-    'Goncalo Oliveira',
-    'Darja Semenistaja',
-    'Antoine Hoang',
-    'Dominic Thiem',
-    'Francesco Passaro',
-    'Nagi Hanatani',
-    'Reka-Luca Jani'];
-
-  wta_list = ['Iga Swiatek',
-    'Aryna Sabalenka',
-    'Elena Rybakina',
-    'Jessica Pegula',
-    'Caroline Garcia',
-    'Ons Jabeur',
-    'Cori Gauff',
-    'Maria Sakkari',
-    'Petra Kvitova',
-    'Darya Kasatkina',
-    'Barbora Krejcikova',
-    'Veronika Kudermetova',
-    'Maia Haddad',
-    'Belinda Bencic',
-    'Ludmilla Samsonova',
-    'Karolina Muchova',
-    'Jelena Ostapenko',
-    'Madison Keys',
-    'Karolina Pliskova',
-    'Viktoria Azarenka',
-    'Donna Vekic',
-    'Ekaterina Alexandrova',
-    'Anastasia Potapova',
-    'Magda Linette',
-    'Qinwen Zheng',
-    'Anhelina Kalinina',
-    'Bernarda Pera',
-    'Elise Mertens',
-    'Petra Martic',
-    'Irina Begu',
-    'Mayar Sherif',
-    'Katerina Siniakova',
-    'Marie Bouzkova',
-    'Lin Zhu',
-    'Paula Badosa',
-    'Marta Kostyuk',
-    'Sorana-Mihaela Cirstea',
-    'Shuai Zhang',
-    'Sloane Stephens',
-    'Anna Blinkova',
-    'Varvara Gracheva',
-    'Marketa Vondrousova',
-    'Elisabetta Cocciaretto',
-    'Jasmine Paolini',
-    'Linda Noskova',
-    'Lauren Davis',
-    'Lucia Bronzetti',
-    'Camila Giorgi',
-    'Shelby Rogers',
-    'Bianca Andreescu',
-    'Anja Stankovic',
-    'Yulia Starodubtseva',
-    'Wild Seyboth',
-    'Goncalo Oliveira',
-    'Darja Semenistaja',
-    'Antoine Hoang',
-    'Dominic Thiem',
-    'Francesco Passaro',
-    'Nagi Hanatani',
-    'Reka-Luca Jani'];
-
-  // var atp_wta = 'atp'
-
-  if (atp_wta == 'atp') {
-    var options = atp_list;
-  }
-  else {
-    var options = wta_list;
-  }
-
-  for (var i = 0; i < options.length; i++) {
-    var opt = options[i];
-
-    var el = document.createElement("option");
-    el.textContent = opt;
-    el.value = opt;
-    select.appendChild(el);
-  }
-}
 
 function get_tour_list(atp_wta) {
   
@@ -331,12 +169,8 @@ function get_tour_list(atp_wta) {
 
 
 
-var dropdown = ""
-
-
 function clipboardShare() {
   // Get the text field
-  // var copyText = document.getElementById("myInput");
   if (num_guesses == 4) {
     var textData = `My bageld score:  \n${'🟨'.repeat(4)} \n https://liufran1.github.io/projects/bageld`
 
@@ -345,11 +179,6 @@ function clipboardShare() {
     var textData = `My bageld score:  \n${'🟨'.repeat(num_guesses - 1)}🎾${'⬛️'.repeat(4 - (num_guesses - 1) - 1)} \n https://liufran1.github.io/projects/bageld`
   }
 
-
-
-  // Select the text field
-  // copyText.select();
-  // copyText.setSelectionRange(0, 99999); // For mobile devices
 
   // Copy the text inside the text field
   navigator.clipboard.writeText(textData).then(function() { alert("Result copied to clipboard "); });
@@ -364,11 +193,11 @@ async function main() {
   jsondata = await getJson(apiUrl)
   console.log(jsondata);
   console.log('API call successful')
-  // test_value += 1
+  
   getparams = false
 
   let listElems = get_tour_list(jsondata['tour'])
-  // populateDropdown(protour)
+  
   console.log(listElems)
   dropdown =   jSuites.dropdown(document.getElementById('dropdown'), {
     data:listElems,
@@ -382,18 +211,7 @@ if (getparams) {
   main();
 }
 
-// console.log(hashedAnswer)
 
-
-// populateDropdown(protour)
-
-// var inputButton = document.getElementById("inputButton");
-let num_guesses = 0
-
-// let selectedPlayer = document.getElementById("selectPlayer").value
-// if (selectedPlayer.length>0){
-//     inputButton.prop('disabled',false);
-// }
 
 function get_guess() {
   var hintContainer = document.getElementById("bagelhint");
@@ -404,7 +222,7 @@ function get_guess() {
 
   console.log(jsondata)
   console.log(dropdown.getValue())
-  // var selectedPlayer = document.getElementById("selectPlayer").value
+
   var selectedPlayer = dropdown.getValue()
   if (selectedPlayer.length == 0) {
     console.log(selectedPlayer);

@@ -25,8 +25,7 @@
           <br></b>
         </p>
         <p>
-
-          <h2 align="left"><a href="#projects"><b>Projects</b></a></h2>
+          <h2 align="left"><a href="#projects" id="projects-link"><b>Projects</b></a></h2>
         </p>
       </header>
 
@@ -89,6 +88,21 @@
         <a href="https://github.com/liufran1" target="_blank"><i class="fab fa-github fa-2x"></i></a>
         </div>
   </footer>
+  <script>
+    const projectsLink = document.getElementById('projects-link');
+    const projectsSection = document.getElementById('projects');
+
+    const scrollToProjects = (event) => {
+      if (!projectsSection) return;
+      event.preventDefault();
+      const top = projectsSection.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    };
+
+    if (projectsLink) {
+      projectsLink.addEventListener('click', scrollToProjects);
+    }
+  </script>
 </body>
 
 </html>
